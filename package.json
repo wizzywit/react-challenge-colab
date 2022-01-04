@@ -6,8 +6,8 @@
   "dependencies": {
     "@material-ui/core": "^3.8.2",
     "@mui/material": "^5.2.7",
-    "@mui/styled-engine-sc": "^5.1.0",
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
+    "@mui/styled-engine-sc": "^5.1.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -60,6 +60,7 @@
   },
   "devDependencies": {
     "@types/faker": "^5.5.8",
-    "@types/lodash": "^4.14.172"
+    "@types/lodash": "^4.14.172",
+    "@types/styled-components": "^5.1.19"
   }
 }

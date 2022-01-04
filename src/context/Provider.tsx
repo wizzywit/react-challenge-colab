@@ -1,6 +1,6 @@
 import {FC, useEffect, useState} from "react";
 import {Context} from "./Context";
-import generateMessage, {Message} from "../Api";
+import generateMessage, {Message, Priority} from "../Api";
 
 type Props = {}
 
@@ -9,6 +9,9 @@ const Provider: FC<Props> = ({children}) => {
 
     //define global context values here
     const [messages, setMessages] = useState<Message[]>([]);
+    const [errors, setErrors] = useState<Message[]>([]);
+    const [warnings, setWarnings] = useState<Message[]>([]);
+    const [infos, setInfos] = useState<Message[]>([]);
     const [start, setStart] = useState<boolean>(false);
 
     useEffect(() => {
@@ -18,6 +21,15 @@ const Provider: FC<Props> = ({children}) => {
             });
         }
     }, [setMessages]);
+
+    useEffect(() => {
+        // if(messages[messages.length - 1].priority === Priority.Warn){}
+        switch (messages[messages.length - 1].priority) {
+            case Priority.Error:
+
+        }
+    }, [messages]);
+
 
     const value = {
         messages,
