@@ -22,7 +22,8 @@ const Provider: FC<Props> = ({children}) => {
     const value = {
         messages,
         start,
-        setStart
+        setStart,
+        setMessages
     }
 
 

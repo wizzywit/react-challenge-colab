@@ -5,5 +5,6 @@ import React from "react";
 export type ContextType = {
     messages?: Message[],
     start?: boolean,
-    setState?: React.Dispatch<React.SetStateAction<boolean>>
+    setState?: React.Dispatch<React.SetStateAction<boolean>>,
+    setMessages?: React.Dispatch<React.SetStateAction<Message[]>>
 };
