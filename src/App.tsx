@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
-import generateMessage, { Message } from './Api';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Navbar from "./components/Navbar";
 
+const theme = createTheme({
+  palette: {
+    error: {
+      main: "#F56236",
+    },
+    warning: {
+      main: "#FCE788"
+    },
+    info: {
+      main: "#88FCA3"
+    }
+  },
+});
 const App: React.FC<{}> = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
-
-  useEffect(() => {
-    const cleanUp = generateMessage((message: Message) => {
-      setMessages(oldMessages => [...oldMessages, message]);
-    });
-    return cleanUp;
-  }, [setMessages]);
 
   return (
-    <div>
-      {messages?.map?.(msg => <div key={msg?.message}>{msg?.message}</div>)}
-    </div>
+      <ThemeProvider theme={theme}>
+        <div>
+          <Navbar/>
+        </div>
+      </ThemeProvider>
   );
 }
 
