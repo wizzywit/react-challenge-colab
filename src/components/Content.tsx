@@ -33,6 +33,7 @@ const Content: FC = () => {
         <>
             <Box sx={{
                 paddingX: 24,
+                marginBottom: 10
             }}>
                 <Box sx={{
                     display: "flex",
