@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Navbar from "./components/Navbar";
-import MessageCard from "./components/MessageCard";
 import {Box} from "@mui/material";
 import {createGlobalStyle} from "styled-components";
 import Content from "./components/Content";
+import Provider from "./context/Provider";
 
 const theme = createTheme({
   palette: {
@@ -35,10 +35,12 @@ const App: React.FC<{}> = () => {
       <>
         <GlobalStyle/>
         <ThemeProvider theme={theme}>
-          <Box sx={{width: "100%", boxSizing: "border-box"}}>
-            <Navbar/>
-            <Content/>
-          </Box>
+            <Provider>
+                <Box sx={{width: "100%", boxSizing: "border-box"}}>
+                    <Navbar/>
+                    <Content/>
+                </Box>
+            </Provider>
         </ThemeProvider>
       </>
 
