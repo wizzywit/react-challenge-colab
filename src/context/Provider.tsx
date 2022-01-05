@@ -11,7 +11,7 @@ const Provider: FC<Props> = ({children}) => {
     //define global context values here
     const [messages, setMessages] = useState<Message[]>([]);
     const [start, setStart] = useState<boolean>(true);
-    const [open, setOpen] = useState<boolean>(true);
+    const [open, setOpen] = useState<boolean>(false);
     const [message, setMessage] = useState<string>("");
 
     const handleClose = useCallback(
